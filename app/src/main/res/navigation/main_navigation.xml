@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment_a">
+
+    <action
+        android:id="@+id/global_action_open_login"
+        app:destination="@+id/fragment_login"
+        app:popUpTo="@id/fragment_a"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/fragment_a"
+        android:name="com.xapo.presentation.view.fragments.AFragment"
+        tools:layout="@layout/fragment_a_layout" />
+
+    <fragment
+        android:id="@+id/fragment_b"
+        android:name="com.xapo.presentation.view.fragments.BFragment"
+        tools:layout="@layout/fragment_b_layout" />
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.xapo.presentation.view.fragments.LoginFragment"
+        tools:layout="@layout/fragment_login_layout">
+        <action
+            android:id="@+id/open_fragment_b"
+            app:destination="@+id/fragment_b" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="com.xapo.presentation.view.fragments.SettingsFragment"
+        tools:layout="@layout/fragment_settings_layout" />
+</navigation>
